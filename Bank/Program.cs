@@ -38,8 +38,12 @@ Courant compteDeThierry2 = new Courant(
     );
 
 banque.Ajouter(compteDeJohn);
+banque.Ajouter(compteDeThierry);
+banque.Ajouter(compteDeThierry2);
+
 
 Console.WriteLine(banque["BEX 12ezae"]);
 
-Console.WriteLine($"La totalité des soldes positifs de compte de Thierry est de {compteDeThierry + compteDeThierry2} €.");
+//Console.WriteLine($"La totalité des soldes positifs des comptes de Thierry est de {compteDeThierry + compteDeThierry2} €.");
+Console.WriteLine($"La totalité des soldes positifs des comptes de Thierry est de {banque.AvoirDesComptes(thierry)} €.");
 

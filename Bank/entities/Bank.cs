@@ -42,5 +42,18 @@ namespace Bank.entities
                 Console.WriteLine($"Aucun compte trouvé avec le numéro {numero}.");
             }
         }
+    
+        public double AvoirDesComptes (Personne titulaire)
+        {
+            double somme = 0;
+            foreach (Courant compte in _comptes)
+            {
+                if(compte._titulaire == titulaire)
+                {
+                    somme += compte;
+                }
+            }
+            return somme;
+        }
     }
 }

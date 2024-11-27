@@ -38,5 +38,10 @@ namespace Bank.entities
             return Math.Max(left._solde, 0) + Math.Max(right._solde,0);
             //return ((left._solde > 0)? left._solde : 0) + ((right._solde > 0) ? right._solde : 0);
         }
+
+        public static double operator + (double left, Courant right)
+        {
+            return left + Math.Max(right._solde, 0);
+        }
     }
 }
