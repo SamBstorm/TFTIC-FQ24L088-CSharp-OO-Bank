@@ -30,16 +30,11 @@ Courant compteDeThierry = new Courant(
     100
     );
 
-Courant compteDeThierry2 = new Courant(
-    thierry,
-    "BE22 34",
-    5_000,
-    0
-    );
+Epargne compteDeThierry2 = new Epargne() { Numero = "BE22 34", Titulaire = thierry };
 
 banque.Ajouter(compteDeJohn);
 banque.Ajouter(compteDeThierry);
-banque.Ajouter(compteDeThierry2);
+//banque.Ajouter(compteDeThierry2);
 
 
 Console.WriteLine(banque["BEX 12ezae"]);
