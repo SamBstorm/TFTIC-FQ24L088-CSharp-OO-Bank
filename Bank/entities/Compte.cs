@@ -28,5 +28,16 @@ namespace Bank.entities
             if (montant <= 0) return;                   //Exception serait plus appropiée
             Solde += montant;
         }
+
+        public static double operator +(Compte left, Compte right)
+        {
+            return Math.Max(left.Solde, 0) + Math.Max(right.Solde, 0);
+            //return ((left._solde > 0)? left._solde : 0) + ((right._solde > 0) ? right._solde : 0);
+        }
+
+        public static double operator +(double left, Compte right)
+        {
+            return left + Math.Max(right.Solde, 0);
+        }
     }
 }

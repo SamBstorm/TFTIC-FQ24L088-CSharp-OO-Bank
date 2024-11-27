@@ -8,30 +8,30 @@ namespace Bank.entities
 {
     public class Banque
     {
-        public string _nom { get; set; }
+        public string Nom { get; set; }
 
-        private List<Courant> _comptes = new List<Courant>();
-        public Courant this[string numero]
+        private List<Compte> _comptes = new List<Compte>();
+        public Compte this[string numero]
         {
             get
             {
                 foreach (var compte in _comptes)
                 {
-                    if (compte._numero == numero) return compte;
+                    if (compte.Numero == numero) return compte;
                 }
                 return null;
             }
         }
 
-        public void Ajouter(Courant compte)
+        public void Ajouter(Compte compte)
         {
             _comptes.Add(compte);
-            Console.WriteLine($"Le compte {compte._numero} a été ajouté à la banque.");
+            Console.WriteLine($"Le compte {compte.Numero} a été ajouté à la banque.");
         }
 
         public void Supprimer(string numero)
         {
-            var compte = this[numero];
+            Compte compte = this[numero];
             if (compte != null)
             {
                 _comptes.Remove(compte);
@@ -46,9 +46,9 @@ namespace Bank.entities
         public double AvoirDesComptes (Personne titulaire)
         {
             double somme = 0;
-            foreach (Courant compte in _comptes)
+            foreach (Compte compte in _comptes)
             {
-                if(compte._titulaire == titulaire)
+                if(compte.Titulaire == titulaire)
                 {
                     somme += compte;
                 }

@@ -34,8 +34,9 @@ Epargne compteDeThierry2 = new Epargne() { Numero = "BE22 34", Titulaire = thier
 
 banque.Ajouter(compteDeJohn);
 banque.Ajouter(compteDeThierry);
-//banque.Ajouter(compteDeThierry2);
+banque.Ajouter(compteDeThierry2);
 
+compteDeThierry2.Depot(5000);
 
 Console.WriteLine(banque["BEX 12ezae"]);
 
